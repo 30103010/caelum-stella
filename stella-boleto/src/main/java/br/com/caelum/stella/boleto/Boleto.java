@@ -44,6 +44,9 @@ public class Boleto implements Serializable {
 	protected List<String> descricoes = Collections.emptyList();
 	protected List<String> locaisDePagamento = Collections.emptyList();
 
+	protected String parcela = "";
+	protected String totalParcelas = "";
+
 	protected Boleto() {}
 
 	/**
@@ -387,6 +390,20 @@ public class Boleto implements Serializable {
 			throw new IllegalArgumentException("maximo de 2 locais de pagamento permitidos");
 		}
 		this.locaisDePagamento = Arrays.asList(locaisDePagamento);
+		return this;
+	}
+
+	public String getParcela() { return parcela; }
+
+	public Boleto comParcela(String parcela) {
+		this.parcela = parcela;
+		return this;
+	}
+
+	public String getTotalParcelas() { return totalParcelas; }
+
+	public Boleto comTotalParcelas(String totalParcelas) {
+		this.totalParcelas = totalParcelas;
 		return this;
 	}
 

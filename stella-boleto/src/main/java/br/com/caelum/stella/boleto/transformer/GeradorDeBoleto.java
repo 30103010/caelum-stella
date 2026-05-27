@@ -230,10 +230,28 @@ public class GeradorDeBoleto {
 	}
 
 	/**
-	 * Gera o boleto no formato PNG. 
+	 * Gera o boleto no formato PNG.
 	 * @return inputStream com o conteúdo do arquivo
 	 */
 	public InputStream geraPNGStream() {
 		return new ByteArrayInputStream(geraPNG());
+	}
+
+	/**
+	 * Gera os boletos em formato carnê PDF (3 por página).
+	 * @return array de bytes representando o PDF do carnê.
+	 */
+	public byte[] geraCarnePDF() {
+		try {
+			InputStream carneTemplate = GeradorDeBoleto.class.getResourceAsStream(
+				"/br/com/caelum/stella/boleto/templates/boleto-carne.jasper");
+			JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(boletos);
+			JasperPrint carnePrint = JasperFillManager.fillReport(carneTemplate, parametros, dataSource);
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			JasperExportManager.exportReportToPdfStream(carnePrint, out);
+			return out.toByteArray();
+		} catch (Exception e) {
+			throw new GeracaoBoletoException(e);
+		}
 	}
 }
