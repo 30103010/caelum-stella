@@ -1,2 +1,4 @@
 jdk:
   - openjdk17
+build:
+  - mvn install -pl stella-core,stella-boleto -am -DskipTests
