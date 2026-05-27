@@ -32,8 +32,9 @@ public abstract class AbstractBanco implements Banco {
 		builder.append(beneficiario.getAgenciaFormatada());
 		builder.append(prefixNotNullStringOrDefault(beneficiario.getDigitoAgencia(), "", "-"));
 		builder.append("/");
-		builder.append(getCodigoBeneficiarioFormatado(beneficiario));
-		builder.append(prefixNotNullStringOrDefault(beneficiario.getDigitoCodigoBeneficiario(), "", "-"));	
+		String codigoBenef = getCodigoBeneficiarioFormatado(beneficiario);
+		builder.append(codigoBenef != null ? codigoBenef : "");
+		builder.append(prefixNotNullStringOrDefault(beneficiario.getDigitoCodigoBeneficiario(), "", "-"));
 		return builder.toString();
 	}
 
