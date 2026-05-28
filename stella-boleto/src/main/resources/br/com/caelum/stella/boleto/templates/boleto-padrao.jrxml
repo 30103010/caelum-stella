@@ -183,7 +183,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" | " + $F{numeroFormatadoComDigito}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{numeroFormatadoComDigito}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="0" width="144" height="33" uuid="00000000-0000-0000-0000-000000000003"/>
@@ -231,7 +231,7 @@
 				</box>
 				<text><![CDATA[Vencimento]]></text>
 			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="427" y="43" width="144" height="10" uuid="00000000-0000-0000-0000-000000000013"/>
 				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="4">
 					<topPen lineWidth="0.0"/>
@@ -240,7 +240,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Right"><font size="7" isBold="true"/></textElement>
-				<textFieldExpression><![CDATA[$F{vencimento}.getTime()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{vencimento} == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{vencimento}.getTime())]]></textFieldExpression>
 			</textField>
 
 			<!-- RECIBO LINHA 2 (y: 53-79) Beneficiário | Agência/Cód -->
@@ -263,7 +263,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement><font size="6"/></textElement>
-				<textFieldExpression><![CDATA[$F{nomeBeneficiario} + " - CNPJ: " + $F{documentoBeneficiario}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nomeBeneficiario} + ($F{documentoBeneficiario} == null ? "" : " - CNPJ: " + $F{documentoBeneficiario})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="0" y="73" width="427" height="6" uuid="00000000-0000-0000-0000-000000000022"/>
@@ -309,7 +309,7 @@
 				</box>
 				<text><![CDATA[Data do Documento]]></text>
 			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Data" x="0" y="89" width="93" height="8" uuid="00000000-0000-0000-0000-000000000031"/>
 				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
 					<topPen lineWidth="0.0"/>
@@ -318,7 +318,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Center"><font size="6"/></textElement>
-				<textFieldExpression><![CDATA[$F{documento}.getTime()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{documento} == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{documento}.getTime())]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="93" y="79" width="93" height="10" uuid="00000000-0000-0000-0000-000000000032"/>
@@ -831,7 +831,7 @@
 				</box>
 				<text><![CDATA[Vencimento]]></text>
 			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="427" y="360" width="144" height="12" uuid="00000000-0000-0000-0000-000000000113"/>
 				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="4">
 					<topPen lineWidth="0.0"/>
@@ -840,7 +840,7 @@
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Right"><font size="7" isBold="true"/></textElement>
-				<textFieldExpression><![CDATA[$F{vencimento}.getTime()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{vencimento} == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{vencimento}.getTime())]]></textFieldExpression>
 			</textField>
 
 			<!-- FICHA LINHA 2 (y: 372-397) Beneficiário | Agência -->
@@ -863,7 +863,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement><font size="6"/></textElement>
-				<textFieldExpression><![CDATA[$F{nomeBeneficiario} + "  CPF/CNPJ: " + $F{documentoBeneficiario}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nomeBeneficiario} + ($F{documentoBeneficiario} == null ? "" : "  CPF/CNPJ: " + $F{documentoBeneficiario})]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="0" y="392" width="427" height="5" uuid="00000000-0000-0000-0000-000000000122"/>
@@ -909,7 +909,7 @@
 				</box>
 				<text><![CDATA[Data do Documento]]></text>
 			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Data" x="0" y="407" width="96" height="10" uuid="00000000-0000-0000-0000-000000000131"/>
 				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
 					<topPen lineWidth="0.0"/>
@@ -918,7 +918,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Center"><font size="6"/></textElement>
-				<textFieldExpression><![CDATA[$F{documento}.getTime()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{documento} == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{documento}.getTime())]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="96" y="397" width="93" height="10" uuid="00000000-0000-0000-0000-000000000132"/>
@@ -993,7 +993,7 @@
 				</box>
 				<text><![CDATA[Data do Processamento]]></text>
 			</staticText>
-			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Data" x="299" y="407" width="128" height="10" uuid="00000000-0000-0000-0000-000000000139"/>
 				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
 					<topPen lineWidth="0.0"/>
@@ -1002,7 +1002,7 @@
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<textElement textAlignment="Center"><font size="6"/></textElement>
-				<textFieldExpression><![CDATA[$F{processamento}.getTime()]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{processamento} == null ? "" : new java.text.SimpleDateFormat("dd/MM/yyyy").format($F{processamento}.getTime())]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="397" width="144" height="10" uuid="00000000-0000-0000-0000-000000000140"/>
