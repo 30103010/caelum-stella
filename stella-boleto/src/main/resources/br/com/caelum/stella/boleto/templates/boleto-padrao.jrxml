@@ -750,10 +750,32 @@
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" x="427" y="285" width="144" height="17" uuid="00000000-0000-0000-0000-000000000192"/>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-					<topPen lineWidth="0.0"/>
+					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
 					<rightPen lineWidth="0.5"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<!-- OVERLAY: borda direita do recibo inteiro y=0-302 -->
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="427" y="0" width="144" height="302" uuid="00000000-0000-0000-0000-000000000193"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<!-- OVERLAY: borda inferior linha Beneficiário Final x=0-427 -->
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="0" y="285" width="427" height="2" uuid="00000000-0000-0000-0000-000000000194"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
 				</box>
 				<text><![CDATA[]]></text>
 			</staticText>
