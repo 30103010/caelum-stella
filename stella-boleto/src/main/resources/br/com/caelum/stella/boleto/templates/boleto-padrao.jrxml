@@ -233,7 +233,7 @@
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="427" y="43" width="144" height="10" uuid="00000000-0000-0000-0000-000000000013"/>
-				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="4">
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="4">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
@@ -310,8 +310,8 @@
 				<text><![CDATA[Data do Documento]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="FixRelativeToBottom" style="Txt_Data" x="0" y="89" width="93" height="8" uuid="00000000-0000-0000-0000-000000000031"/>
-				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
+				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="0" y="89" width="93" height="8" uuid="00000000-0000-0000-0000-000000000031"/>
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
@@ -332,7 +332,7 @@
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="93" y="89" width="93" height="8" uuid="00000000-0000-0000-0000-000000000033"/>
-				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
@@ -353,7 +353,7 @@
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="186" y="89" width="109" height="8" uuid="00000000-0000-0000-0000-000000000035"/>
-				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
@@ -374,7 +374,7 @@
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="295" y="89" width="132" height="8" uuid="00000000-0000-0000-0000-000000000037"/>
-				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2">
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
@@ -395,7 +395,7 @@
 			</staticText>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Normal" x="427" y="89" width="144" height="8" uuid="00000000-0000-0000-0000-000000000039"/>
-				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="4">
+				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="4">
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
@@ -507,7 +507,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Instruções (Texto de responsabilidade do beneficiário.)]]></text>
 			</staticText>
@@ -696,7 +696,7 @@
 				<textFieldExpression><![CDATA[$F{documentoPagador}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="234" width="144" height="10" uuid="00000000-0000-0000-0000-000000000075"/>
+				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="234" width="144" height="27" uuid="00000000-0000-0000-0000-000000000075"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
@@ -708,11 +708,11 @@
 
 			<!-- RECIBO LINHA 7 (y: 261-285) Beneficiário Final | Autenticação -->
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" style="Celula" x="0" y="261" width="427" height="10" uuid="00000000-0000-0000-0000-000000000080"/>
+				<reportElement positionType="FixRelativeToBottom" style="Celula" x="0" y="261" width="427" height="24" uuid="00000000-0000-0000-0000-000000000080"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
-					<bottomPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.0"/>
 				</box>
 				<text><![CDATA[Beneficiário Final:]]></text>
@@ -722,7 +722,7 @@
 				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="4">
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
-					<bottomPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
 					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
@@ -746,6 +746,17 @@
 				<textFieldExpression><![CDATA[$P{nomeDoSistema}]]></textFieldExpression>
 			</textField>
 
+			<!-- BORDA DIREITA y=285-302 -->
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="427" y="285" width="144" height="17" uuid="00000000-0000-0000-0000-000000000192"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
 			<!-- LINHA DE CORTE (y: 302) -->
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="0" y="302" width="571" height="6" uuid="00000000-0000-0000-0000-000000000099"/>
@@ -783,7 +794,7 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" | " + $F{numeroFormatadoComDigito}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{numeroFormatadoComDigito}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Negrito" x="215" y="308" width="356" height="42" uuid="00000000-0000-0000-0000-000000000103"/>
@@ -791,7 +802,7 @@
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.0"/>
 					<bottomPen lineWidth="0.75"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="9" isBold="false"/>
@@ -1128,7 +1139,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Informações de Responsabilidade do Beneficiário]]></text>
 			</staticText>
@@ -1328,7 +1339,7 @@
 				<textFieldExpression><![CDATA[$F{documentoPagador}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="555" width="144" height="10" uuid="00000000-0000-0000-0000-000000000186"/>
+				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="555" width="144" height="24" uuid="00000000-0000-0000-0000-000000000186"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
