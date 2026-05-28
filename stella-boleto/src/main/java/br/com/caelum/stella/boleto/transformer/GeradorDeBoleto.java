@@ -238,6 +238,24 @@ public class GeradorDeBoleto {
 	}
 
 	/**
+	 * Gera o boleto no formato padrão PDF (com recibo do pagador no topo + ficha de compensação).
+	 * @return array de bytes representando o PDF.
+	 */
+	public byte[] geraBoletoPadraoPDF() {
+		try {
+			InputStream template = GeradorDeBoleto.class.getResourceAsStream(
+				"/br/com/caelum/stella/boleto/templates/boleto-padrao.jasper");
+			JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(boletos);
+			JasperPrint print = JasperFillManager.fillReport(template, parametros, dataSource);
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			JasperExportManager.exportReportToPdfStream(print, out);
+			return out.toByteArray();
+		} catch (Exception e) {
+			throw new GeracaoBoletoException(e);
+		}
+	}
+
+	/**
 	 * Gera os boletos em formato carnê PDF (3 por página).
 	 * @return array de bytes representando o PDF do carnê.
 	 */
