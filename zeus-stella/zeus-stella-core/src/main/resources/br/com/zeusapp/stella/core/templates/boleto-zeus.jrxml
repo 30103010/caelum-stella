@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- Zeus Stella — Boleto Padrão com suporte a PIX QR Code -->
 <!-- Baseado em boleto-sem-sacador-avalista.jrxml (caelum-stella)            -->
 <!-- Principais diferenças:                                                   -->
@@ -62,10 +62,8 @@
         </field>
     </subDataset>
 
-    <queryString><![CDATA[]]></queryString>
-
     <!-- ===================================================================
-         PARÂMETROS
+         PARÂMETROS — devem vir ANTES do queryString (ordem obrigatória no XSD)
          BARCODE_IMAGE  : byte[] PNG do código de barras ITF (44 dígitos)
          QRCODE_IMAGE   : byte[] PNG do QR Code EMV Pix
          EXIBIR_PIX     : Boolean — controla visibilidade do bloco PIX
@@ -75,6 +73,8 @@
     <parameter name="EXIBIR_PIX"     class="java.lang.Boolean"   isForPrompting="false">
         <defaultValueExpression><![CDATA[Boolean.FALSE]]></defaultValueExpression>
     </parameter>
+
+    <queryString><![CDATA[]]></queryString>
 
     <!-- ===================================================================
          CAMPOS — todos mapeados ao BoletoReportModel (flat, sem aninhamento)
@@ -128,7 +128,7 @@
             <!-- Cabeçalho "Recibo do Pagador" -->
             <staticText>
                 <reportElement style="Celula" x="1" y="0" width="552" height="13"
-                               uuid="r001"/>
+                               uuid="02949738-df07-43c2-8c1a-333805bd75a6"/>
                 <box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.5"/>
                     <leftPen lineWidth="0.0"/>
@@ -143,7 +143,7 @@
             <image vAlign="Bottom">
                 <reportElement x="1" y="8" width="104" height="23"
                                mode="Opaque" forecolor="#000000" backcolor="#FFFFFF"
-                               uuid="r002"/>
+                               uuid="9829f819-342c-4d68-af7e-0cbd5b7009fa"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.75"/>
@@ -155,7 +155,7 @@
             <!-- Código banco (recibo) -->
             <textField pattern="" isBlankWhenNull="true">
                 <reportElement style="Txt_Negrito" x="105" y="8" width="52" height="23"
-                               uuid="r003"/>
+                               uuid="ddf6ba9b-584c-44d4-af04-4b39d5c840e0"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.75"/>
@@ -167,7 +167,7 @@
             <!-- Linha digitável (recibo) -->
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Negrito" x="157" y="8" width="396" height="23"
-                               uuid="r004"/>
+                               uuid="0fd70b52-4df5-40b8-acb6-28bdd8e62d56"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.75"/>
@@ -180,7 +180,7 @@
             <!-- Pagador/CPF/Endereço (recibo) — labels + dados -->
             <staticText>
                 <reportElement style="Celula" x="1" y="31" width="552" height="10"
-                               uuid="r005"/>
+                               uuid="8dd36b8a-884b-466c-b66a-82463eada655"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -191,7 +191,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="41" width="552" height="14"
-                               uuid="r006"/>
+                               uuid="70054bf6-def2-4723-a46d-16ec656f3ee5"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -202,7 +202,7 @@
             </textField>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="55" width="552" height="14"
-                               uuid="r007"/>
+                               uuid="a52e40e7-e9cb-4b81-a377-ad0b2bffdf23"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -213,7 +213,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="1" y="69" width="552" height="10"
-                               uuid="r008"/>
+                               uuid="fc84bfd2-e135-4c62-a0f3-c9a9857f91e6"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -227,7 +227,7 @@
             <!-- Nosso Número / Nº Documento / Valor Boleto (recibo) -->
             <staticText>
                 <reportElement style="Celula" x="1" y="79" width="145" height="10"
-                               uuid="r009"/>
+                               uuid="2b0da5b0-f2b4-41a3-ab09-1d38387c21ae"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -238,7 +238,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="89" width="145" height="14"
-                               uuid="r010"/>
+                               uuid="99ab4096-2cd2-4863-abca-6c1204b70a61"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -249,7 +249,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="147" y="79" width="102" height="10"
-                               uuid="r011"/>
+                               uuid="f525f560-1b0c-4bc8-9a43-f1d742b28cfd"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -260,7 +260,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="147" y="89" width="102" height="14"
-                               uuid="r012"/>
+                               uuid="acc28030-2bc5-4331-b0ed-b7d759e4084b"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -271,7 +271,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="351" y="79" width="99" height="10"
-                               uuid="r013"/>
+                               uuid="73ed90bc-ab48-473b-a806-4f17bfa5900a"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -282,7 +282,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_valor" x="351" y="89" width="99" height="14"
-                               uuid="r014"/>
+                               uuid="1ac88f1e-573f-4091-bc0e-9aa6960ccff8"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -294,7 +294,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="250" y="79" width="100" height="10"
-                               uuid="r015"/>
+                               uuid="b06ea60a-7b5e-4cc0-bca7-f0ef92e71558"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -305,7 +305,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Data" x="250" y="89" width="100" height="14"
-                               uuid="r016"/>
+                               uuid="91cc7c6c-22db-4e3c-8f81-d2970d6198b1"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -316,7 +316,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="450" y="79" width="103" height="10"
-                               uuid="r017"/>
+                               uuid="0fc9710f-6193-4a54-918a-8b4779ed7924"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -327,7 +327,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_valor" x="450" y="89" width="103" height="14"
-                               uuid="r018"/>
+                               uuid="3418850b-61ce-4315-b468-f5492abcdffa"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -341,7 +341,7 @@
             <!-- Beneficiário (recibo) -->
             <staticText>
                 <reportElement style="Celula" x="1" y="103" width="552" height="10"
-                               uuid="r019"/>
+                               uuid="e3d1ca27-911b-442e-ae9b-9da96159998f"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -352,7 +352,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="113" width="552" height="14"
-                               uuid="r020"/>
+                               uuid="1840a3bf-0ae0-45ee-8c5a-751646e8aa33"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -363,7 +363,7 @@
             </textField>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="127" width="552" height="14"
-                               uuid="r021"/>
+                               uuid="d4a38ac7-a5fd-4746-8754-0fd7672a42c6"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -374,7 +374,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="1" y="141" width="552" height="10"
-                               uuid="r022"/>
+                               uuid="ce75e646-828e-4dc6-a644-b1c16ffeb933"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -385,7 +385,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="151" width="552" height="14"
-                               uuid="r023"/>
+                               uuid="85c2d576-49a4-457e-9855-f69271eaefc5"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.0"/>
@@ -398,7 +398,7 @@
             <!-- Linha separadora pontilhada -->
             <staticText>
                 <reportElement style="Celula" x="1" y="173" width="552" height="10"
-                               uuid="r024"/>
+                               uuid="e23110e0-abf6-4f2b-a66b-841172483715"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.5" lineStyle="Dashed" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.0"/>
@@ -416,7 +416,7 @@
             <image vAlign="Bottom">
                 <reportElement x="1" y="183" width="104" height="23"
                                mode="Opaque" forecolor="#000000" backcolor="#FFFFFF"
-                               uuid="f001"/>
+                               uuid="53b9a3e2-b18c-40f5-ba23-ae293697f563"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.75"/>
@@ -428,7 +428,7 @@
             <!-- Código banco (ficha) -->
             <textField pattern="" isBlankWhenNull="true">
                 <reportElement style="Txt_Negrito" x="105" y="183" width="52" height="23"
-                               uuid="f002"/>
+                               uuid="7d9e13a6-fa6e-4e16-884f-ee38dd05f205"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.75"/>
@@ -440,7 +440,7 @@
             <!-- Linha digitável (ficha) -->
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Negrito" x="157" y="183" width="396" height="23"
-                               uuid="f003"/>
+                               uuid="bd2f754d-ec80-45fb-bdbd-ad15b609c544"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.75"/>
@@ -453,7 +453,7 @@
             <!-- Local de Pagamento + Vencimento -->
             <staticText>
                 <reportElement style="Celula" x="1" y="206" width="389" height="10"
-                               uuid="f004"/>
+                               uuid="1ea20661-b380-4f40-843d-2648be0b6953"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -464,7 +464,7 @@
             </staticText>
             <staticText>
                 <reportElement style="Celula" x="391" y="206" width="162" height="10"
-                               uuid="f005"/>
+                               uuid="1762af88-7d26-4a8d-99dc-1fbd4857f08a"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -475,7 +475,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="216" width="389" height="16"
-                               uuid="f006"/>
+                               uuid="523eca51-b08b-44d1-a302-a213edc6b2ac"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -486,7 +486,7 @@
             </textField>
             <textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="391" y="216" width="162" height="16"
-                               uuid="f007"/>
+                               uuid="73518630-76db-4b89-a679-9af90deb1109"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -499,7 +499,7 @@
             <!-- Beneficiário / Agência-Conta -->
             <staticText>
                 <reportElement style="Celula" x="1" y="232" width="389" height="10"
-                               uuid="f008"/>
+                               uuid="e552894d-5cbe-4622-9c26-8fb5253fb5ed"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -510,7 +510,7 @@
             </staticText>
             <staticText>
                 <reportElement style="Celula" x="391" y="232" width="162" height="10"
-                               uuid="f009"/>
+                               uuid="b3ca02d1-4417-4f7f-a34e-ca9490691664"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -521,7 +521,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="242" width="389" height="14"
-                               uuid="f010"/>
+                               uuid="78ddb499-e933-4564-88a3-38089fe59095"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -532,7 +532,7 @@
             </textField>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="391" y="242" width="162" height="14"
-                               uuid="f011"/>
+                               uuid="741435e2-5157-4d09-b629-a8ba1ec2721b"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -545,7 +545,7 @@
             <!-- Linha de campos: Data Documento / Nº Documento / Espécie / Aceite / Processamento / Nosso Número -->
             <staticText>
                 <reportElement style="Celula" x="1" y="256" width="85" height="10"
-                               uuid="f012"/>
+                               uuid="4497451c-1a93-412e-ad79-75ad513a0c58"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -556,7 +556,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Data" x="1" y="266" width="85" height="14"
-                               uuid="f013"/>
+                               uuid="39849377-f0c9-4521-ba1f-a6f60aa2e631"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -567,7 +567,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="87" y="256" width="90" height="10"
-                               uuid="f014"/>
+                               uuid="b12a8bad-8749-44c3-be64-eb4c86286408"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -578,7 +578,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="87" y="266" width="90" height="14"
-                               uuid="f015"/>
+                               uuid="41e6b6eb-c23b-468a-89ac-90955ea09ae8"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -589,7 +589,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="178" y="256" width="60" height="10"
-                               uuid="f016"/>
+                               uuid="37167c92-2164-4099-8dce-8f35ade7527d"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -600,7 +600,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="178" y="266" width="60" height="14"
-                               uuid="f017"/>
+                               uuid="934979e0-0ca7-4200-b45d-dd7abab05ef9"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.5"/>
                     <bottomPen lineWidth="0.0"/>
@@ -610,7 +610,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="239" y="256" width="61" height="10"
-                               uuid="f018"/>
+                               uuid="0c22421f-e5b7-4bfe-99a8-21915d7d3833"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -621,7 +621,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="239" y="266" width="61" height="14"
-                               uuid="f019"/>
+                               uuid="73d4d200-c295-499f-96c7-d748108683f1"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.5"/>
                     <bottomPen lineWidth="0.0"/>
@@ -631,7 +631,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="301" y="256" width="89" height="10"
-                               uuid="f020"/>
+                               uuid="8a29c4e5-1e47-4fc6-97b2-4959e7ad24c2"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -642,7 +642,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Data" x="301" y="266" width="89" height="14"
-                               uuid="f021"/>
+                               uuid="38b5f27b-b50f-4dad-b2da-04d458f4d8f2"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.5"/>
                     <bottomPen lineWidth="0.0"/>
@@ -652,7 +652,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="391" y="256" width="162" height="10"
-                               uuid="f022"/>
+                               uuid="1a0c5b37-cb83-4387-ba06-10157656a1d9"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -663,7 +663,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="391" y="266" width="162" height="14"
-                               uuid="f023"/>
+                               uuid="22edb82d-6a87-4533-8b82-c5ecd4c11615"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -676,7 +676,7 @@
             <!-- Linha de campos: Uso Banco / Carteira / Espécie Moeda / Qtd Moeda / Valor Moeda / (=) Valor Documento -->
             <staticText>
                 <reportElement style="Celula" x="1" y="280" width="85" height="25"
-                               uuid="f024"/>
+                               uuid="bf1ff422-30f6-42b3-afa5-5eef36c56a19"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -685,7 +685,7 @@
             </staticText>
             <staticText>
                 <reportElement style="Celula" x="87" y="280" width="90" height="10"
-                               uuid="f025"/>
+                               uuid="910f3525-d9f6-4901-a6a0-b23b1617c16d"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -694,7 +694,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="87" y="290" width="90" height="15"
-                               uuid="f026"/>
+                               uuid="497a4978-36ea-405b-b777-4f04681ebee5"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <bottomPen lineWidth="0.0"/>
                     <rightPen lineWidth="0.0"/>
@@ -703,7 +703,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="178" y="280" width="60" height="10"
-                               uuid="f027"/>
+                               uuid="a5aebddf-9438-41a8-9e17-a6285db9d138"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -712,7 +712,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="178" y="290" width="60" height="15"
-                               uuid="f028"/>
+                               uuid="e22c9f2e-92c5-44f5-9472-52fd48880876"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.5"/>
                     <bottomPen lineWidth="0.0"/>
@@ -722,7 +722,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="239" y="280" width="61" height="10"
-                               uuid="f029"/>
+                               uuid="9ed4db3e-03d8-4860-b827-b0db501c60b2"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -731,7 +731,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="239" y="290" width="61" height="15"
-                               uuid="f030"/>
+                               uuid="6b54c34e-d8e2-4621-a220-441446bcf738"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.5"/>
                     <bottomPen lineWidth="0.0"/>
@@ -741,7 +741,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="301" y="280" width="89" height="10"
-                               uuid="f031"/>
+                               uuid="aaa634a7-0e28-42e1-a8e5-eb7dacbaed40"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -750,7 +750,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="301" y="290" width="89" height="15"
-                               uuid="f032"/>
+                               uuid="77b3e605-06c9-4091-8d4c-5cb6723015ee"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.5"/>
                     <bottomPen lineWidth="0.0"/>
@@ -760,7 +760,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="391" y="280" width="162" height="10"
-                               uuid="f033"/>
+                               uuid="cda2d197-2e06-4901-8b68-ba51a95237af"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -769,7 +769,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_valor" x="391" y="290" width="162" height="15"
-                               uuid="f034"/>
+                               uuid="375ccf81-e117-4d2c-91fe-bbe3adfeefd6"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -783,7 +783,7 @@
             <!-- Instruções (lista) + campos de ajuste financeiro -->
             <staticText>
                 <reportElement style="Celula" x="1" y="305" width="389" height="10"
-                               uuid="f035"/>
+                               uuid="2aedbc24-20db-4399-9320-4c812e693316"/>
                 <box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.0"/>
@@ -793,7 +793,7 @@
             </staticText>
             <staticText>
                 <reportElement style="Celula" x="391" y="305" width="162" height="10"
-                               uuid="f036"/>
+                               uuid="f0e4f93e-7291-4026-8cb5-26fd2df77bdb"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <rightPen lineWidth="0.0"/>
@@ -802,7 +802,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_valor" x="391" y="315" width="162" height="14"
-                               uuid="f037"/>
+                               uuid="f284c64c-a934-4e49-9eb5-d19dc1e288a6"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -814,7 +814,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="391" y="329" width="162" height="10"
-                               uuid="f038"/>
+                               uuid="924d8656-641f-44ff-9658-99d05b6abd8e"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -825,7 +825,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_valor" x="391" y="339" width="162" height="14"
-                               uuid="f039"/>
+                               uuid="1797b140-b070-4e4d-b31f-fee5718a93a9"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -837,7 +837,7 @@
             </textField>
             <staticText>
                 <reportElement style="Celula" x="391" y="353" width="162" height="10"
-                               uuid="f040"/>
+                               uuid="d658dc5b-9c07-45ba-95e4-d245cc85d7b8"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineStyle="Solid" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.5"/>
@@ -848,7 +848,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_valor" x="391" y="363" width="162" height="14"
-                               uuid="f041"/>
+                               uuid="dc97b0c9-87cf-49b6-8815-15ef493447ae"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.5"/>
@@ -862,21 +862,21 @@
             <!-- Lista de instruções -->
             <componentElement>
                 <reportElement x="1" y="315" width="379" height="14"
-                               isRemoveLineWhenBlank="true" uuid="f042"/>
+                               isRemoveLineWhenBlank="true" uuid="684c8cef-5656-4873-b71a-55e40e289eab"/>
                 <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components"
                          xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components
                            http://jasperreports.sourceforge.net/xsd/components.xsd"
                          printOrder="Vertical">
-                    <datasetRun subDataset="instrucoes_ds" uuid="f043">
+                    <datasetRun subDataset="instrucoes_ds" uuid="2926aac8-50f4-4a91-a6d8-d11c078b9df9">
                         <dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{instrucoes})]]></dataSourceExpression>
                     </datasetRun>
                     <jr:listContents height="14" width="379">
                         <frame>
                             <reportElement x="0" y="0" width="250" height="14"
-                                           uuid="f044"/>
+                                           uuid="8d65329c-1706-4be4-bef5-96f8cc60cd73"/>
                             <textField>
                                 <reportElement style="Txt_Peq" x="0" y="2" width="250" height="10"
-                                               uuid="f045"/>
+                                               uuid="3e69c5c8-9d6b-4b86-8c23-861211456b6c"/>
                                 <box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
                                     <leftPen lineWidth="0.0"/>
                                     <bottomPen lineWidth="0.0"/>
@@ -898,7 +898,8 @@
             <!-- Label "Pague com Pix" -->
             <staticText>
                 <reportElement style="Celula" x="432" y="378" width="118" height="10"
-                               uuid="pix001">
+                               forecolor="#009900"
+                               uuid="58be144e-ecb1-4b57-9e63-328c2c21cb17">
                     <printWhenExpression><![CDATA[$P{EXIBIR_PIX}]]></printWhenExpression>
                 </reportElement>
                 <box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
@@ -908,7 +909,7 @@
                     <rightPen lineWidth="0.5" lineColor="#009900"/>
                 </box>
                 <textElement textAlignment="Center">
-                    <font isBold="true" forecolor="#009900"/>
+                    <font isBold="true"/>
                 </textElement>
                 <text><![CDATA[Pague com Pix]]></text>
             </staticText>
@@ -916,7 +917,7 @@
             <!-- Imagem QR Code -->
             <image scaleImage="RetainShape" onErrorType="Blank">
                 <reportElement x="432" y="388" width="118" height="118"
-                               uuid="pix002">
+                               uuid="aa6aff17-e493-414d-99c6-d7739b090b9f">
                     <printWhenExpression><![CDATA[$P{EXIBIR_PIX}]]></printWhenExpression>
                 </reportElement>
                 <box>
@@ -930,7 +931,7 @@
             ============================================================ -->
             <staticText>
                 <reportElement style="Celula" x="1" y="425" width="552" height="10"
-                               uuid="f050"/>
+                               uuid="64252f0a-53ba-462c-a220-d6223fcc1689"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.0"/>
@@ -941,7 +942,7 @@
             </staticText>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="436" width="552" height="14"
-                               uuid="f051"/>
+                               uuid="ddf03f92-1b6b-4373-9389-3979355e78d5"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.0"/>
@@ -951,7 +952,7 @@
             </textField>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="451" width="552" height="14"
-                               uuid="f052"/>
+                               uuid="ea284247-07c7-40f2-ad5e-be105160c587"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.0"/>
@@ -961,7 +962,7 @@
             </textField>
             <textField isBlankWhenNull="true">
                 <reportElement style="Txt_Normal" x="1" y="466" width="552" height="14"
-                               uuid="f053"/>
+                               uuid="ed92e9f2-b78f-4cb4-a526-bc2690069531"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <leftPen lineWidth="0.0"/>
                     <bottomPen lineWidth="0.0"/>
@@ -973,7 +974,7 @@
             <!-- Rodapé da ficha -->
             <staticText>
                 <reportElement style="Celula" x="1" y="481" width="552" height="10"
-                               uuid="f054"/>
+                               uuid="52c0a892-9d4d-41a8-b6c9-a5c501edd0ce"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.25" lineColor="#BAB3B3"/>
                     <leftPen lineWidth="0.0"/>
@@ -985,7 +986,7 @@
             </staticText>
             <staticText>
                 <reportElement style="Celula" x="380" y="481" width="90" height="10"
-                               uuid="f055"/>
+                               uuid="18534046-a822-44bb-95e2-bda1769cb576"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.0"/>
@@ -997,7 +998,7 @@
             </staticText>
             <staticText>
                 <reportElement style="Celula" x="470" y="481" width="82" height="10"
-                               uuid="f056"/>
+                               uuid="00a29202-dec8-4ab5-bc6a-11a0f19b237a"/>
                 <box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
                     <topPen lineWidth="0.0"/>
                     <leftPen lineWidth="0.0"/>
@@ -1015,7 +1016,7 @@
                  Substitui o componente barbecue do template original
             ============================================================ -->
             <image scaleImage="FillFrame" onErrorType="Blank">
-                <reportElement x="9" y="503" width="371" height="46" uuid="f060"/>
+                <reportElement x="9" y="503" width="371" height="46" uuid="85ef74f2-846a-4324-839c-7373a201332f"/>
                 <imageExpression><![CDATA[$P{BARCODE_IMAGE}]]></imageExpression>
             </image>
 
