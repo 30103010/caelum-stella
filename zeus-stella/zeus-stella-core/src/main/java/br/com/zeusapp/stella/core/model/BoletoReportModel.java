@@ -165,7 +165,8 @@ public class BoletoReportModel {
 
     private static URL resolverLogoBanco(String codigoBanco) {
         if (codigoBanco == null) return null;
-        String path = "/br/com/zeusapp/stella/core/images/banco-" + codigoBanco + ".png";
+        // Imagens nomeadas como o código do banco: 001.png, 237.png, 341.png etc.
+        String path = "/br/com/zeusapp/stella/core/images/" + codigoBanco + ".png";
         return BoletoReportModel.class.getResource(path);
     }
 
