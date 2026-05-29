@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
@@ -173,31 +173,31 @@
 				<imageExpression><![CDATA[$F{logo_banco}]]></imageExpression>
 			</image>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement positionType="FixRelativeToBottom" style="Txt_Negrito" x="135" y="0" width="292" height="33" uuid="00000000-0000-0000-0000-000000000002"/>
+				<reportElement positionType="FixRelativeToBottom" style="Txt_Negrito" x="135" y="0" width="80" height="33" uuid="00000000-0000-0000-0000-000000000002"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
-					<topPen lineWidth="0.0"/>
+					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.75"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="20" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{numeroFormatadoComDigito}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="0" width="144" height="33" uuid="00000000-0000-0000-0000-000000000003"/>
-				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="4">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="FixRelativeToBottom" x="215" y="0" width="356" height="33" uuid="00000000-0000-0000-0000-000000000003"/>
+				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="4">
 					<topPen lineWidth="0.5"/>
-					<leftPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
 					<bottomPen lineWidth="0.75"/>
 					<rightPen lineWidth="0.5"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
 				</textElement>
-				<text><![CDATA[Recibo do Pagador]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$F{linhaDigitavel}]]></textFieldExpression>
+			</textField>
 
 			<!-- RECIBO LINHA 1 (y: 33-53) Local de Pagamento | Vencimento -->
 			<staticText>
@@ -443,7 +443,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Espécie]]></text>
 			</staticText>
@@ -453,7 +453,7 @@
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Center"><font size="6"/></textElement>
 				<text><![CDATA[R$]]></text>
@@ -464,7 +464,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Quantidade]]></text>
 			</staticText>
@@ -500,7 +500,23 @@
 				<textFieldExpression><![CDATA[$F{valorBoleto}]]></textFieldExpression>
 			</textField>
 
-			<!-- RECIBO LINHA 5 (y: 120-210) Instruções | 5 campos de valor -->
+							<!-- Espaçadores de borda: Uso do Banco / Quantidade / Valor (linha valor y=107) -->
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="107" width="93" height="13" uuid="00000000-0000-0000-0000-000000000195"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="186" y="107" width="109" height="13" uuid="00000000-0000-0000-0000-000000000196"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.5"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="295" y="107" width="132" height="13" uuid="00000000-0000-0000-0000-000000000197"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<!-- RECIBO LINHA 5 (y: 120-210) Instruções | 5 campos de valor -->
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="0" y="120" width="427" height="10" uuid="00000000-0000-0000-0000-000000000050"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
@@ -534,7 +550,13 @@
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
-			<!-- Recibo col-direita: 5 células de valor (y: 120-210) -->
+							<!-- Overlay borda esquerda instrucoes -->
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="0" y="130" width="427" height="80" uuid="00000000-0000-0000-0000-000000000198"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<!-- Recibo col-direita: 5 células de valor (y: 120-210) -->
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="120" width="144" height="10" uuid="00000000-0000-0000-0000-000000000060"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
@@ -808,10 +830,10 @@
 			<textField pattern="" isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Negrito" x="135" y="308" width="80" height="42" uuid="00000000-0000-0000-0000-000000000102"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
-					<topPen lineWidth="0.0"/>
+					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.75"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="20" isBold="true"/>
@@ -821,13 +843,13 @@
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="FixRelativeToBottom" style="Txt_Negrito" x="215" y="308" width="356" height="42" uuid="00000000-0000-0000-0000-000000000103"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
-					<topPen lineWidth="0.0"/>
+					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.0"/>
 					<bottomPen lineWidth="0.75"/>
 					<rightPen lineWidth="0.5"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="9" isBold="false"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{linhaDigitavel}]]></textFieldExpression>
 			</textField>
@@ -1097,7 +1119,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Espécie Moeda]]></text>
 			</staticText>
@@ -1107,7 +1129,7 @@
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<textElement textAlignment="Center"><font size="6"/></textElement>
 				<textFieldExpression><![CDATA[$F{especieMoeda}]]></textFieldExpression>
@@ -1118,7 +1140,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Quantidade]]></text>
 			</staticText>
@@ -1154,7 +1176,23 @@
 				<textFieldExpression><![CDATA[$F{valorBoleto}]]></textFieldExpression>
 			</textField>
 
-			<!-- FICHA LINHA 5 (y: 441-531) Instruções | 5 campos de valor -->
+							<!-- Espaçadores de borda: Uso do Banco / Quantidade / Valor (linha valor y=427) -->
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="0" y="427" width="96" height="14" uuid="00000000-0000-0000-0000-000000000199"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="189" y="427" width="110" height="14" uuid="00000000-0000-0000-0000-000000000200"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.5"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" x="299" y="427" width="128" height="14" uuid="00000000-0000-0000-0000-000000000201"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<!-- FICHA LINHA 5 (y: 441-531) Instruções | 5 campos de valor -->
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="0" y="441" width="427" height="10" uuid="00000000-0000-0000-0000-000000000160"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
@@ -1188,7 +1226,13 @@
 					</jr:listContents>
 				</jr:list>
 			</componentElement>
-			<!-- Ficha col-direita: 5 células de valor (y: 441-531) -->
+							<!-- Overlay borda esquerda instrucoes ficha -->
+				<staticText>
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="0" y="451" width="427" height="80" uuid="00000000-0000-0000-0000-000000000202"/>
+					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<!-- Ficha col-direita: 5 células de valor (y: 441-531) -->
 			<staticText>
 				<reportElement positionType="FixRelativeToBottom" style="Celula" x="427" y="441" width="144" height="10" uuid="00000000-0000-0000-0000-000000000170"/>
 				<box topPadding="2" leftPadding="10" bottomPadding="2" rightPadding="2">
