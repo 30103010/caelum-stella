@@ -502,17 +502,17 @@
 
 							<!-- Espaçadores de borda: Uso do Banco / Quantidade / Valor (linha valor y=107) -->
 				<staticText>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="107" width="93" height="13" uuid="00000000-0000-0000-0000-000000000195"/>
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="0" y="107" width="93" height="13" uuid="00000000-0000-0000-0000-000000000195"/>
 					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
 					<text><![CDATA[]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="FixRelativeToBottom" x="186" y="107" width="109" height="13" uuid="00000000-0000-0000-0000-000000000196"/>
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="186" y="107" width="109" height="13" uuid="00000000-0000-0000-0000-000000000196"/>
 					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.5"/></box>
 					<text><![CDATA[]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="FixRelativeToBottom" x="295" y="107" width="132" height="13" uuid="00000000-0000-0000-0000-000000000197"/>
+					<reportElement positionType="FixRelativeToBottom" mode="Transparent" x="295" y="107" width="132" height="13" uuid="00000000-0000-0000-0000-000000000197"/>
 					<box><topPen lineWidth="0.0"/><leftPen lineWidth="0.5"/><bottomPen lineWidth="0.0"/><rightPen lineWidth="0.0"/></box>
 					<text><![CDATA[]]></text>
 				</staticText>
@@ -735,7 +735,7 @@
 					<topPen lineWidth="0.25" lineColor="#BAB3B3"/>
 					<leftPen lineWidth="0.5"/>
 					<bottomPen lineWidth="0.5"/>
-					<rightPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<text><![CDATA[Beneficiário Final:]]></text>
 			</staticText>
